@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="assets/css/build/swiper.min.css">
     <link rel="stylesheet" href="assets/css/build/fancybox.min.css">
-    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     
     <title>Name</title>
     <meta name='keywords' content='' />
@@ -13,8 +13,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <script src="assets/js/build/swiper-bundle.min.js" defer></script> 
-    <script src="assets/js/build/fancybox.min.js" defer></script>
-    <script src="assets/js/main.min.js" defer></script>
+    <script src="assets/js/build/fancybox.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
 </head>
 
 <body>
@@ -32,12 +32,12 @@
 
                     <div class="header__top_row">
                         <div class="header__top_logo">
-                            <a href="index.html" class="header__logo logo">
+                            <div class="header__logo logo">
                                 <picture class="logo__picture">
                                     <source srcset="assets/img/logo.svg" type="image/svg+xml">
                                     <img src="assets/img/logo.png" alt="Logo">
                                 </picture>
-                            </a>  
+                            </div>  
                         </div>
 
                         <div class="header__top_item header__top_adres">
@@ -97,9 +97,11 @@
                                             <li class="header__sublink"><a class="header__sublink_link" href="reviews.html">Отзывы</a></li>
                                             <li class="header__sublink"><a class="header__sublink_link" href="gallery.html">Фотогалерея</a></li>
                                             <li class="header__sublink"><a class="header__sublink_link" href="stocks.html">Акции</a></li>
+                                            <li class="header__sublink"><a class="header__sublink_link" href="metodi.html">Методы оказания помощи</a></li>
                                             <li class="header__sublink"><a class="header__sublink_link" href="legal.html">Юридическая информация</a></li>
                                             <li class="header__sublink"><a class="header__sublink_link" href="articles.html">Статьи</a></li>
                                             <li class="header__sublink"><a class="header__sublink_link" href="faq.html">Вопрос-ответ</a></li>
+                                            <li class="header__sublink"><a class="header__sublink_link" href="jobs.html">Вакансии</a></li>
                                             <li class="header__sublink"><a class="header__sublink_link" href="chief-doctor.html">Руководство клиники</a></li>
                                         </ul>
                                     </div>
@@ -213,13 +215,15 @@
                         <form class="intro__form form">
                             <div class="form__item">
                                 <label for="intro-name" class="form-label intro__label">Введите ваше имя:</label>
-                                <input id="intro-name" type="text" class="form-input intro__input">     
+                                <input id="intro-name" type="text" class="form-input intro__input name-input">     
+                                <p class="error-message" id="name-error">Имя должно содержать только русские буквы.</p>
                             </div>
+                            
                             <div class="form__item">
                                 <label for="intro-tel" class="form-label intro__label">Введите ваш телефон:</label>
                                 <input id="intro-tel" type="tel" class="form-input intro__input">     
                             </div>
-                            <button class="standart-btn form-btn intro__btn">Отправить</button>
+                            <button class="standart-btn form-btn intro__btn popup-btn" data-path="popup-ok">Отправить</button>
                             <p class="form-politic intro__politic">Отправляя данные, вы соглашаетесь <a href="#" rel="nofollow">на обработку персональных данных</a></p>
                         </form>
                     </div>
@@ -283,17 +287,17 @@
 
                             <div class="services__swiper-slide swiper-slide">
                                 <div class="services__card">
-                                    <a href="#" class="services__card_img">
+                                    <a href="service.html" class="services__card_img">
                                         <img src="assets/img/sections/services/service-1.jpg" alt="Вывод из запоя">
                                     </a>
                                     <div class="services__card_info">
                                         <div class="services__card_top">
-                                            <a href="#" class="services__card_title">Вывод из запоя</a>
+                                            <a href="service.html" class="services__card_title">Вывод из запоя</a>
                                             <p class="services__card_subtitle">Круглосуточная помощь в борьбе с затяжными запоями, предотвращение повторного возвращения к вредным привычкам.</p>
                                         </div>
                                         <div class="services__card_bottom">
                                             <p class="services__card_price">от <span>3 500</span> ₽/услуга</p>
-                                            <button class="standart-btn services__card_btn">Заказать услугу</button>                                
+                                            <button class="standart-btn services__card_btn popup-btn" data-path="popup-call">Заказать услугу</button>                                    
                                         </div>
                                     </div>
                                 </div>
@@ -301,17 +305,17 @@
 
                             <div class="services__swiper-slide swiper-slide">
                                 <div class="services__card">
-                                    <a href="#" class="services__card_img">
+                                    <a href="service.html" class="services__card_img">
                                         <img src="assets/img/sections/services/service-2.jpg" alt="Вывод из запоя">
                                     </a>
                                     <div class="services__card_info">
                                         <div class="services__card_top">
-                                            <a href="#" class="services__card_title">Лечение алкоголизма</a>
+                                            <a href="service.html" class="services__card_title">Лечение алкоголизма</a>
                                             <p class="services__card_subtitle">Назначение эффективной терапии против алкоголизма после индивидуальной консультации.</p>
                                         </div>
                                         <div class="services__card_bottom">
                                             <p class="services__card_price">от <span>4 900</span> ₽/услуга</p>
-                                            <button class="standart-btn services__card_btn">Заказать услугу</button>                                
+                                            <button class="standart-btn services__card_btn popup-btn" data-path="popup-call">Заказать услугу</button>                                    
                                         </div>
                                     </div>
                                 </div>                            
@@ -319,17 +323,17 @@
 
                             <div class="services__swiper-slide swiper-slide">
                                 <div class="services__card">
-                                    <a href="#" class="services__card_img">
+                                    <a href="service.html" class="services__card_img">
                                         <img src="assets/img/sections/services/service-3.jpg" alt="Вывод из запоя">
                                     </a>
                                     <div class="services__card_info">
                                         <div class="services__card_top">
-                                            <a href="#" class="services__card_title">Реабилитационный центр</a>
+                                            <a href="service.html" class="services__card_title">Реабилитационный центр</a>
                                             <p class="services__card_subtitle">Хороший центр с комфортными условиями для проживания.</p>
                                         </div>
                                         <div class="services__card_bottom">
                                             <p class="services__card_price">от <span>35 000</span> ₽/услуга</p>
-                                            <button class="standart-btn services__card_btn">Заказать услугу</button>                                
+                                            <button class="standart-btn services__card_btn popup-btn" data-path="popup-call">Заказать услугу</button>                                    
                                         </div>
                                     </div>
                                 </div>    
@@ -337,17 +341,17 @@
 
                             <div class="services__swiper-slide swiper-slide">
                                 <div class="services__card">
-                                    <a href="#" class="services__card_img">
+                                    <a href="service.html" class="services__card_img">
                                         <img src="assets/img/sections/services/service-4.jpg" alt="Вывод из запоя">
                                     </a>
                                     <div class="services__card_info">
                                         <div class="services__card_top">
-                                            <a href="#" class="services__card_title">Кодирование от алкоголизма</a>
+                                            <a href="service.html" class="services__card_title">Кодирование от алкоголизма</a>
                                             <p class="services__card_subtitle">Кодирование для полного отказа от употребления алкоголя, эффективные препараты.</p>
                                         </div>
                                         <div class="services__card_bottom">
                                             <p class="services__card_price">от <span>5 000</span> ₽/услуга</p>
-                                            <button class="standart-btn services__card_btn">Заказать услугу</button>                                
+                                            <button class="standart-btn services__card_btn popup-btn" data-path="popup-call">Заказать услугу</button>                                    
                                         </div>
                                     </div>
                                 </div>                            
@@ -355,17 +359,17 @@
 
                             <div class="services__swiper-slide swiper-slide">
                                 <div class="services__card">
-                                    <a href="#" class="services__card_img">
+                                    <a href="service.html" class="services__card_img">
                                         <img src="assets/img/sections/services/service-5.jpg" alt="Вывод из запоя">
                                     </a>
                                     <div class="services__card_info">
                                         <div class="services__card_top">
-                                            <a href="#" class="services__card_title">Нарколог на дом</a>
+                                            <a href="service.html" class="services__card_title">Нарколог на дом</a>
                                             <p class="services__card_subtitle">Доступна услуга выезда медиков на дом, 100% гарантия результата. Приедем по вашему адресу в Санкт-Петербурге и области.</p>
                                         </div>
                                         <div class="services__card_bottom">
                                             <p class="services__card_price">от <span>2 900</span> ₽/услуга</p>
-                                            <button class="standart-btn services__card_btn">Заказать услугу</button>                                
+                                            <button class="standart-btn services__card_btn popup-btn" data-path="popup-call">Заказать услугу</button>                                    
                                         </div>
                                     </div>
                                 </div>                            
@@ -373,17 +377,17 @@
 
                             <div class="services__swiper-slide swiper-slide">
                                 <div class="services__card">
-                                    <a href="#" class="services__card_img">
+                                    <a href="service.html" class="services__card_img">
                                         <img src="assets/img/sections/services/service-6.jpg" alt="Вывод из запоя">
                                     </a>
                                     <div class="services__card_info">
                                         <div class="services__card_top">
-                                            <a href="#" class="services__card_title">Лечение наркомании</a>
+                                            <a href="service.html" class="services__card_title">Лечение наркомании</a>
                                             <p class="services__card_subtitle">Работа с наркозависимыми людьми, положительная динамика в первые месяцы после обращения.</p>
                                         </div>
                                         <div class="services__card_bottom">
                                             <p class="services__card_price">от <span>6 000</span> ₽/услуга</p>
-                                            <button class="standart-btn services__card_btn">Заказать услугу</button>                                
+                                            <button class="standart-btn services__card_btn popup-btn" data-path="popup-call">Заказать услугу</button>                                    
                                         </div>
                                     </div>
                                 </div>                            
@@ -470,13 +474,14 @@
                             <p class="form-subtitle">и бесплатную консультацию</p>
                             <div class="form-item">
                                     <label for="consult-name" class="form-label">Введите ваше имя:</label>
-                                    <input id="consult-name" type="text" class="form-input">     
+                                    <input id="consult-name" type="text" class="form-input name-input">
+                                    <p class="error-message" id="name-error">Имя должно содержать только русские буквы.</p>
                                 </div>
                                 <div class="form-item">
                                     <label for="consult-tel" class="form-label">Введите ваш телефон:</label>
                                     <input id="consult-tel" type="tel" class="form-input">     
                                 </div>
-                                <button class="standart-btn form-btn form-btns">Записаться на прием</button>
+                                <button class="standart-btn form-btn form-btns popup-btn" data-path="popup-ok">Записаться на прием</button>
                                 <p class="form-politic">Отправляя данные, вы соглашаетесь <a href="#" rel="nofollow">на обработку персональных данных</a></p>
                         </form>                    
                     </div>
@@ -949,7 +954,7 @@
                                 <div class="doctors__left">
                                     <div class="doctors__card">
                                         <p class="doctors__subtitle">Наша клиника - безопасный и надежный путь к трезвой жизни</p>
-                                        <a href="#" class="doctors__fio">Коновалов Александр Дмитриевич</a>
+                                        <a href="doctor.html" class="doctors__fio">Коновалов Александр Дмитриевич</a>
                                         <p class="doctors__text">Главврач, психиатр, нарколог.</p>
                                         <p class="doctors__text">
                                             Образование: Первый Санкт-Петербургский государственный медицинский университет имени академика И.П. Павлова (лечебное дело), Санкт-Петербургский государственный медицинский университет им. акад. И.П. Павлова (психиатрия), Военно-медицинская академия имени С. М. Кирова (наркология), Военно-медицинская академия имени С. М. Кирова (психиатрия и наркология), Военно-медицинская академия имени С. М. Кирова (психиатрия).
@@ -957,7 +962,7 @@
                                         <p class="doctors__text">Общий стаж – <span>34 года.</span></p>
                                     </div>
                                     <button class=" standart-btn doctors__btn popup-btn" data-path="popup-call">Обратиться</button>
-                                    <a href="#" class="doctors__link">Все специалисты</a>
+                                    <a href="doctors.html" class="doctors__link">Все специалисты</a>Все специалисты</a>
                                 </div>
                             </div>
                         </div>
@@ -970,7 +975,7 @@
                                 <div class="doctors__left">
                                     <div class="doctors__card">
                                         <p class="doctors__subtitle">Наша клиника - безопасный и надежный путь к трезвой жизни</p>
-                                        <a href="#" class="doctors__fio">Анисова Анна Вагановна</a>
+                                        <a href="doctor.html" class="doctors__fio">Анисова Анна Вагановна</a>
                                         <p class="doctors__text">Психолог, психотерапевт.</p>
                                         <p class="doctors__text">
                                             Образование: Сибирский государственный медицинский университет (лечебное дело и психотерапия), также прошла повышение квалификации по классу «психология», «психотерапия и наркология». На данный момент является психологом и психотерапевтом нашей клиники.
@@ -978,7 +983,7 @@
                                         <p class="doctors__text">Общий стаж – <span>19 лет.</span></p>
                                     </div>
                                     <button class=" standart-btn doctors__btn popup-btn" data-path="popup-call">Обратиться</button>
-                                    <a href="#" class="doctors__link">Все специалисты</a>
+                                    <a href="doctors.html" class="doctors__link">Все специалисты</a>Все специалисты</a>
                                 </div>
                             </div>
                         </div>
@@ -991,7 +996,7 @@
                                 <div class="doctors__left">
                                     <div class="doctors__card">
                                         <p class="doctors__subtitle">Наша клиника - безопасный и надежный путь к трезвой жизни</p>
-                                        <a href="#" class="doctors__fio">Валентинов Сергей Сергеевич</a>
+                                        <a href="doctor.html" class="doctors__fio">Валентинов Сергей Сергеевич</a>
                                         <p class="doctors__text">Фельдшер скорой помощи.</p>
                                         <p class="doctors__text">
                                             Окончил Санкт-Петербургский Фельдшерский колледж, прошёл повышение квалификации на Факультете непрерывного медицинского образования (ФНМО) по направлению «наркология для фельдшеров».
@@ -999,7 +1004,7 @@
                                         <p class="doctors__text">Общий стаж – <span>7 лет.</span></p>
                                     </div>
                                     <button class=" standart-btn doctors__btn popup-btn" data-path="popup-call">Обратиться</button>
-                                    <a href="#" class="doctors__link">Все специалисты</a>
+                                    <a href="doctors.html" class="doctors__link">Все специалисты</a>Все специалисты</a>
                                 </div>
                             </div>
                         </div>
@@ -1012,7 +1017,7 @@
                                 <div class="doctors__left">
                                     <div class="doctors__card">
                                         <p class="doctors__subtitle">Наша клиника - безопасный и надежный путь к трезвой жизни</p>
-                                        <a href="#" class="doctors__fio">Киречко Анатолий Владимирович</a>
+                                        <a href="doctor.html" class="doctors__fio">Киречко Анатолий Владимирович</a>
                                         <p class="doctors__text">Нарколог, психотерапевт.</p>
                                         <p class="doctors__text">
                                             Образование: Кемеровская государственная медицинская академия (лечебное дело), Кемеровская государственная медицинская академия (психиатрия и наркология), Кемеровская государственная медицинская академия (психиатрия), Кемеровский государственный медицинский университет (психиатрия), Кемеровский государственный медицинский университет (психиатрия и наркология), Институт психотерапии и медицинской психологии имени Б.Д. Карвасарского (психотерапия).
@@ -1020,7 +1025,7 @@
                                         <p class="doctors__text">Общий стаж – <span>21 год.</span></p>
                                     </div>
                                     <button class=" standart-btn doctors__btn popup-btn" data-path="popup-call">Обратиться</button>
-                                    <a href="#" class="doctors__link">Все специалисты</a>
+                                    <a href="doctors.html" class="doctors__link">Все специалисты</a>Все специалисты</a>
                                 </div>
                             </div>
                         </div>
@@ -1272,13 +1277,14 @@
                             <p class="form-subtitle">и бесплатную консультацию</p>
                             <div class="form-item">
                                     <label for="consult-name" class="form-label">Введите ваше имя:</label>
-                                    <input id="consult-name" type="text" class="form-input">     
+                                    <input id="consult-name" type="text" class="form-input name-input"> 
+                                    <p class="error-message" id="name-error">Имя должно содержать только русские буквы.</p>
                                 </div>
                                 <div class="form-item">
                                     <label for="consult-tel" class="form-label">Введите ваш телефон:</label>
                                     <input id="consult-tel" type="tel" class="form-input">     
                                 </div>
-                                <button class="standart-btn form-btn form-btns">Записаться на прием</button>
+                                <button class="standart-btn form-btn form-btns popup-btn" data-path="popup-ok">Записаться на прием</button>
                                 <p class="form-politic">Отправляя данные, вы соглашаетесь <a href="#" rel="nofollow">на обработку персональных данных</a></p>
                         </form>                    
                     </div>
@@ -1298,12 +1304,12 @@
                     <p class="footer__text">Адрес контактного центра:</p>
                     <button class="footer__contact popup-btn" data-path="popup-city">Санкт-Петербург, улица Марата, 59</p>
 
-                    <a href="index.html" class="footer__logo--mobile logo">
+                    <div class="footer__logo--mobile logo">
                         <picture class="logo__picture">
                             <source srcset="assets/img/logo.svg" type="image/svg+xml">
                             <img src="assets/img/logo.png" alt="Logo">
                         </picture>
-                    </a> 
+                    </div> 
 
                     <button class="standart-btn footer__btn popup-btn" data-path="popup-call">Начать новую жизнь</button>
                 </div>
@@ -1335,12 +1341,12 @@
                 </div>
 
                 <div class="footer__item">
-                    <a href="index.html" class="footer__logo logo">
+                    <div class="footer__logo logo">
                         <picture class="logo__picture">
                             <source srcset="assets/img/logo.svg" type="image/svg+xml">
                             <img src="assets/img/logo.png" alt="Logo">
                         </picture>
-                    </a> 
+                    </div> 
 
                     <div class="footer__networks">
                         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -1385,8 +1391,8 @@
 
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-telegram" width="24" height="24" viewBox="0 0 24 24"><path d="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z" /></svg>                    </div>
 
-                    <a href="#" class="footer__politic_link footer__nav_link">Политика конфиденциальности</a>
-                    <a href="#" class="footer__politic_link footer__nav_link">Пользовательское соглашение</a>
+                    <a href="politika.html" class="footer__politic_link footer__nav_link">Политика конфиденциальности</a>
+                    <a href="soglashenie.html" class="footer__politic_link footer__nav_link">Пользовательское соглашение</a>
                     <p class="footer__copy">© «Результат», 2024</p>
                 </div>
             </div>
@@ -1414,13 +1420,14 @@
                 <form class="popup__form">
                     <div class="form-item popup__form-item">
                             <label for="consult-name" class="form-label">Введите ваше имя:</label>
-                            <input id="consult-name" type="text" class="form-input popup__input">     
+                            <input id="consult-name" type="text" class="form-input popup__input name-input">
+                            <p class="error-message" id="name-error">Имя должно содержать только русские буквы.</p>  
                         </div>
                         <div class="form-item">
                             <label for="consult-tel" class="form-label">Введите ваш телефон:</label>
                             <input id="consult-tel" type="tel" class="form-input popup__input">     
                         </div>
-                        <button class="standart-btn form-btn form-btns popup__btn">Отправить</button>
+                        <button class="standart-btn form-btn form-btns popup__btn popup-btn" data-path="popup-ok">Отправить</button>
                         <p class="form-politic">Отправляя данные, вы соглашаетесь <a href="#" rel="nofollow">на обработку персональных данных</a></p>
                 </form>
             </div>
@@ -1513,27 +1520,27 @@
                     <div class="popup__search-city popup__search-result none">
                         <p class="no-results-message none">Результатов не найдено</p>
                         <ul class="search-list popup__city-list popup__search-city_list">
-                            <li class="search-item"><a href="#" class="popup__search-city_link search-name popup__search_link">
+                            <li class="search-item"><a href="service.html" class="popup__search-city_link search-name popup__search_link">
                                 <span>Лечение алкоголизма</span>
                                 <span>Услуга</span>
                             </a></li>
-                            <li class="search-item"><a href="#" class="popup__search-city_link search-name popup__search_link">
+                            <li class="search-item"><a href="service.html" class="popup__search-city_link search-name popup__search_link">
                                 <span>Лечение наркомании</span>
                                 <span>Услуга</span>
                             </a></li>
-                            <li class="search-item"><a href="#" class="popup__search-city_link search-name popup__search_link">
+                            <li class="search-item"><a href="service.html" class="popup__search-city_link search-name popup__search_link">
                                 <span>Лечение пивного алкоголизма</span>
                                 <span>Услуга</span>
                             </a></li>
-                            <li class="search-item"><a href="#" class="popup__search-city_link search-name popup__search_link">
+                            <li class="search-item"><a href="service.html" class="popup__search-city_link search-name popup__search_link">
                                 <span>Кодирование</span>
                                 <span>Услуга</span>
                             </a></li>
-                            <li class="search-item"><a href="#" class="popup__search-city_link search-name popup__search_link">
+                            <li class="search-item"><a href="service.html" class="popup__search-city_link search-name popup__search_link">
                                 <span>Реабилитация</span>
                                 <span>Услуга</span>
                             </a></li>
-                            <li class="search-item"><a href="#" class="popup__search-city_link search-name popup__search_link">
+                            <li class="search-item"><a href="service.html" class="popup__search-city_link search-name popup__search_link">
                                 <span>Вывод из запоя</span>
                                 <span>Услуга</span>
                             </a></li>

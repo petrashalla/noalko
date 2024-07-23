@@ -127,6 +127,52 @@ document.addEventListener('DOMContentLoaded', function () {
 	)
 	/* End Mask phone */
 
+
+
+
+
+	// let nameInput = document.getElementById('intro-name');
+	// let nameError = document.getElementById('name-error');
+	
+	// nameInput.addEventListener('input', function(event) {
+	// 	let value = this.value;
+	// 	let regex = /^[а-яёА-ЯЁ\s]*$/;
+		
+	// 	if (!regex.test(value)) {
+	// 		this.value = value.replace(/[^а-яёА-ЯЁ\s]/g, '');
+	// 		nameError.style.display = 'block';  // Показать сообщение об ошибке
+	// 	} else {
+	// 		nameError.style.display = 'none';   // Скрыть сообщение об ошибке
+	// 	}
+	// });
+
+
+	    // Функция для обработки ошибок
+		function handleNameInput(event) {
+			let input = event.target;
+			let value = input.value;
+			let errorMessage = input.nextElementSibling;
+	
+			let regex = /^[а-яёА-ЯЁ\s]*$/;
+			
+			if (!regex.test(value)) {
+				input.value = value.replace(/[^а-яёА-ЯЁ\s]/g, '');
+				errorMessage.style.display = 'block'; 
+			} else {
+				errorMessage.style.display = 'none'; 
+			}
+		}
+		document.querySelectorAll('.name-input').forEach(function(input) {
+			input.addEventListener('input', handleNameInput);
+		});
+
+
+
+
+
+
+
+
 	/*  Popups  */
 	function popupClose(popupActive) {
 		popupActive.classList.remove('open')

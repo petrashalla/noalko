@@ -97,9 +97,11 @@
                                             <li class="header__sublink"><a class="header__sublink_link" href="reviews.html">Отзывы</a></li>
                                             <li class="header__sublink"><a class="header__sublink_link" href="gallery.html">Фотогалерея</a></li>
                                             <li class="header__sublink"><a class="header__sublink_link" href="stocks.html">Акции</a></li>
+                                            <li class="header__sublink"><a class="header__sublink_link" href="metodi.html">Методы оказания помощи</a></li>
                                             <li class="header__sublink"><a class="header__sublink_link" href="legal.html">Юридическая информация</a></li>
                                             <li class="header__sublink"><a class="header__sublink_link" href="articles.html">Статьи</a></li>
                                             <li class="header__sublink"><a class="header__sublink_link" href="faq.html">Вопрос-ответ</a></li>
+                                            <li class="header__sublink"><a class="header__sublink_link" href="jobs.html">Вакансии</a></li>
                                             <li class="header__sublink"><a class="header__sublink_link" href="chief-doctor.html">Руководство клиники</a></li>
                                         </ul>
                                     </div>
@@ -253,7 +255,8 @@
                     <p class="form-title">Оставить отзыв</p>
                     <div class="form-item">
                             <label for="comment-name" class="form-label">Введите ваше имя:</label>
-                            <input name="comment-name" id="comment-name" type="text" class="form-input">     
+                            <input name="comment-name" id="comment-name" type="text" class="form-input name-input">
+                            <p class="error-message" id="name-error">Имя должно содержать только русские буквы.</p>   
                         </div>
                         <div class="form-item">
                             <label for="comment-tel" class="form-label">Введите ваш телефон:</label>
@@ -264,13 +267,7 @@
                             <textarea name="comment-comment" id="comment-comment" class="form-textarea"></textarea>   
                         </div>
                         <p class="form-politic">Отправляя данные, вы соглашаетесь <a href="#" rel="nofollow">на обработку персональных данных</a></p>
-
-                        <div class="comment__form__bottom">
-                            <img src="" alt="captcha">
-                            <button class="standart-btn captcha-btn">Отправить</button>
-                            <input type="text" class="form-input captcha-input">  
-                            <button class="standart-btn form-btn form-btns">Оставить отзыв</button>
-                        </div>
+                        <button class="standart-btn form-btn form-btns popup-btn" data-path="popup-ok">Оставить отзыв</button>
                 </form> 
 
             </div>
@@ -374,8 +371,8 @@
 
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-telegram" width="24" height="24" viewBox="0 0 24 24"><path d="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z" /></svg>                    </div>
 
-                    <a href="#" class="footer__politic_link footer__nav_link">Политика конфиденциальности</a>
-                    <a href="#" class="footer__politic_link footer__nav_link">Пользовательское соглашение</a>
+                    <a href="politika.html" class="footer__politic_link footer__nav_link">Политика конфиденциальности</a>
+                    <a href="soglashenie.html" class="footer__politic_link footer__nav_link">Пользовательское соглашение</a>
                     <p class="footer__copy">© «Результат», 2024</p>
                 </div>
             </div>
@@ -408,7 +405,7 @@
                             <label for="consult-tel" class="form-label">Введите ваш телефон:</label>
                             <input id="consult-tel" type="tel" class="form-input popup__input">     
                         </div>
-                        <button class="standart-btn form-btn form-btns popup__btn">Отправить</button>
+                        <button class="standart-btn form-btn form-btns popup__btn popup-btn" data-path="popup-ok">Отправить</button>
                         <p class="form-politic">Отправляя данные, вы соглашаетесь <a href="#" rel="nofollow">на обработку персональных данных</a></p>
                 </form>
             </div>
