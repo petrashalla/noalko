@@ -128,47 +128,72 @@ document.addEventListener('DOMContentLoaded', function () {
 	/* End Mask phone */
 
 
+	/* Mask name */
+	function handleNameInput(event) {
+		let input = event.target;
+		let value = input.value;
+		let errorMessage = input.nextElementSibling;
 
-
-
-	// let nameInput = document.getElementById('intro-name');
-	// let nameError = document.getElementById('name-error');
-	
-	// nameInput.addEventListener('input', function(event) {
-	// 	let value = this.value;
-	// 	let regex = /^[а-яёА-ЯЁ\s]*$/;
+		let regex = /^[а-яёА-ЯЁ\s]*$/;
 		
-	// 	if (!regex.test(value)) {
-	// 		this.value = value.replace(/[^а-яёА-ЯЁ\s]/g, '');
-	// 		nameError.style.display = 'block';  // Показать сообщение об ошибке
-	// 	} else {
-	// 		nameError.style.display = 'none';   // Скрыть сообщение об ошибке
-	// 	}
-	// });
+		if (!regex.test(value)) {
+			input.value = value.replace(/[^а-яёА-ЯЁ\s]/g, '');
+			errorMessage.style.display = 'block'; 
+		} else {
+			errorMessage.style.display = 'none'; 
+		}
+	}
+	document.querySelectorAll('.name-input').forEach(function(input) {
+		input.addEventListener('input', handleNameInput);
+	});
+	/* End mask name */
 
 
-	    // Функция для обработки ошибок
-		function handleNameInput(event) {
-			let input = event.target;
-			let value = input.value;
-			let errorMessage = input.nextElementSibling;
-	
-			let regex = /^[а-яёА-ЯЁ\s]*$/;
-			
-			if (!regex.test(value)) {
-				input.value = value.replace(/[^а-яёА-ЯЁ\s]/g, '');
-				errorMessage.style.display = 'block'; 
-			} else {
-				errorMessage.style.display = 'none'; 
+
+	// Проверяем корректность номера телефона
+	function isValidPhoneNumber(phoneNumber) {
+		phoneNumber = phoneNumber.replace(/\D/g, '');
+		if (phoneNumber.length !== 11) {
+			return false;
+		}
+		for (let i = 0; i <= 2; i++) {
+			const segment = phoneNumber.substring(i, i + 9);
+			if (/^(\d)\1{8}$/.test(segment)) {
+				return false;
 			}
 		}
-		document.querySelectorAll('.name-input').forEach(function(input) {
-			input.addEventListener('input', handleNameInput);
+		return true;
+	}
+
+	// Проверяем, что имя содержит хотя бы 2 буквы
+	function isValidName(name) {
+		const letterCount = (name.match(/[a-zA-Zа-яА-Я]/g) || []).length;
+		return letterCount >= 2;
+	}
+
+	/* Form popup  */
+	document.querySelectorAll('.send-btn').forEach(button => {
+		button.addEventListener('click', function(event) {
+			const form = this.closest('form');
+
+			const phoneInput = form.querySelector('input[type=tel]');
+			const phoneNumber = phoneInput ? phoneInput.value : '';
+
+			const nameInput = form.querySelector('.name-input');
+			const name = nameInput ? nameInput.value : '';
+
+			if (isValidPhoneNumber(phoneNumber) && isValidName(name)) {
+				this.setAttribute('data-path', 'popup-ok');
+			} else {
+				this.setAttribute('data-path', 'popup-error');
+			}
+
+			const popupPath = this.getAttribute('data-path');
+			const popup = document.querySelector(`.${popupPath}`);
+			event.preventDefault();
 		});
-
-
-
-
+	});
+	/* End form popup  */
 
 
 

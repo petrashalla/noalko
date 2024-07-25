@@ -3158,6 +3158,10 @@
                 align-items: baseline;
         gap: 10px;
     }
+
+    .comment__form_btn {
+        flex: 1 0 27%;
+    }
     
     /*  media comments  */
     @media (max-width: 688px) {
